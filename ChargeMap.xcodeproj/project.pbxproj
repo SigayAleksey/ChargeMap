@@ -11,6 +11,11 @@
 		28BFC3472999425E00E590F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3462999425E00E590F0 /* SceneDelegate.swift */; };
 		28BFC34E2999426000E590F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BFC34D2999426000E590F0 /* Assets.xcassets */; };
 		28BFC3512999426000E590F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BFC34F2999426000E590F0 /* LaunchScreen.storyboard */; };
+		28BFC37A2999496E00E590F0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3792999496E00E590F0 /* NetworkService.swift */; };
+		28BFC37C299949A300E590F0 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC37B299949A300E590F0 /* RequestFactory.swift */; };
+		28BFC37E29994A0900E590F0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC37D29994A0900E590F0 /* NetworkRequest.swift */; };
+		28BFC38029994A2400E590F0 /* NetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC37F29994A2400E590F0 /* NetworkErrorHandler.swift */; };
+		28BFC38229994A3B00E590F0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC38129994A3B00E590F0 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +44,11 @@
 		28BFC3522999426000E590F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28BFC3572999426000E590F0 /* ChargeMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChargeMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BFC3612999426000E590F0 /* ChargeMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChargeMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28BFC3792999496E00E590F0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		28BFC37B299949A300E590F0 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		28BFC37D29994A0900E590F0 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		28BFC37F29994A2400E590F0 /* NetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandler.swift; sourceTree = "<group>"; };
+		28BFC38129994A3B00E590F0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,7 @@
 		28BFC3752999430700E590F0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				28BFC3782999495100E590F0 /* NetworkService */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -134,6 +145,18 @@
 				28BFC3522999426000E590F0 /* Info.plist */,
 			);
 			path = Provision;
+			sourceTree = "<group>";
+		};
+		28BFC3782999495100E590F0 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				28BFC3792999496E00E590F0 /* NetworkService.swift */,
+				28BFC37B299949A300E590F0 /* RequestFactory.swift */,
+				28BFC37D29994A0900E590F0 /* NetworkRequest.swift */,
+				28BFC37F29994A2400E590F0 /* NetworkErrorHandler.swift */,
+				28BFC38129994A3B00E590F0 /* NetworkError.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BFC38029994A2400E590F0 /* NetworkErrorHandler.swift in Sources */,
+				28BFC38229994A3B00E590F0 /* NetworkError.swift in Sources */,
+				28BFC37C299949A300E590F0 /* RequestFactory.swift in Sources */,
 				28BFC3452999425E00E590F0 /* AppDelegate.swift in Sources */,
+				28BFC37A2999496E00E590F0 /* NetworkService.swift in Sources */,
 				28BFC3472999425E00E590F0 /* SceneDelegate.swift in Sources */,
+				28BFC37E29994A0900E590F0 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
