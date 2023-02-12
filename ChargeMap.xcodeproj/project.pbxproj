@@ -22,6 +22,14 @@
 		28BFC38E2999700C00E590F0 /* FeatureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC38D2999700C00E590F0 /* FeatureState.swift */; };
 		28BFC3922999704100E590F0 /* ChargingStationsFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3912999704100E590F0 /* ChargingStationsFetching.swift */; };
 		28BFC3942999705A00E590F0 /* ChargingStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3932999705A00E590F0 /* ChargingStationsViewModel.swift */; };
+		28BFC3962999719C00E590F0 /* ChargingStationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3952999719C00E590F0 /* ChargingStationsView.swift */; };
+		28BFC3982999721800E590F0 /* MapZoomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3972999721800E590F0 /* MapZoomButtons.swift */; };
+		28BFC39A2999723700E590F0 /* MapAnnotationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3992999723700E590F0 /* MapAnnotationImage.swift */; };
+		28BFC39D299972F700E590F0 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC39C299972F700E590F0 /* ErrorView.swift */; };
+		28BFC39F2999731200E590F0 /* ErrorViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC39E2999731200E590F0 /* ErrorViewDelegate.swift */; };
+		28BFC3A12999755C00E590F0 /* ChargingStationsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3A02999755C00E590F0 /* ChargingStationsMapView.swift */; };
+		28BFC3A42999859400E590F0 /* ChargingStation+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3A32999859400E590F0 /* ChargingStation+Stub.swift */; };
+		28BFC3A62999862E00E590F0 /* ChargingStationsViewModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3A52999862E00E590F0 /* ChargingStationsViewModel+Stub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +69,14 @@
 		28BFC38D2999700C00E590F0 /* FeatureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureState.swift; sourceTree = "<group>"; };
 		28BFC3912999704100E590F0 /* ChargingStationsFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsFetching.swift; sourceTree = "<group>"; };
 		28BFC3932999705A00E590F0 /* ChargingStationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsViewModel.swift; sourceTree = "<group>"; };
+		28BFC3952999719C00E590F0 /* ChargingStationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsView.swift; sourceTree = "<group>"; };
+		28BFC3972999721800E590F0 /* MapZoomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapZoomButtons.swift; sourceTree = "<group>"; };
+		28BFC3992999723700E590F0 /* MapAnnotationImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationImage.swift; sourceTree = "<group>"; };
+		28BFC39C299972F700E590F0 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		28BFC39E2999731200E590F0 /* ErrorViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewDelegate.swift; sourceTree = "<group>"; };
+		28BFC3A02999755C00E590F0 /* ChargingStationsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsMapView.swift; sourceTree = "<group>"; };
+		28BFC3A32999859400E590F0 /* ChargingStation+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChargingStation+Stub.swift"; sourceTree = "<group>"; };
+		28BFC3A52999862E00E590F0 /* ChargingStationsViewModel+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChargingStationsViewModel+Stub.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				28BFC38D2999700C00E590F0 /* FeatureState.swift */,
+				28BFC39B299972E300E590F0 /* UI */,
 				28BFC3782999495100E590F0 /* NetworkService */,
 			);
 			path = Core;
@@ -176,10 +193,11 @@
 		28BFC38329996F7900E590F0 /* ChargingStations */ = {
 			isa = PBXGroup;
 			children = (
+				28BFC38429996F9200E590F0 /* ChargingStationsFactory.swift */,
 				28BFC38629996F9700E590F0 /* Model */,
 				28BFC38729996F9C00E590F0 /* View */,
 				28BFC38829996FA100E590F0 /* VIewModel */,
-				28BFC38429996F9200E590F0 /* ChargingStationsFactory.swift */,
+				28BFC3A22999856900E590F0 /* Stub */,
 			);
 			path = ChargingStations;
 			sourceTree = "<group>";
@@ -196,6 +214,10 @@
 		28BFC38729996F9C00E590F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				28BFC3952999719C00E590F0 /* ChargingStationsView.swift */,
+				28BFC3A02999755C00E590F0 /* ChargingStationsMapView.swift */,
+				28BFC3972999721800E590F0 /* MapZoomButtons.swift */,
+				28BFC3992999723700E590F0 /* MapAnnotationImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +229,24 @@
 				28BFC3932999705A00E590F0 /* ChargingStationsViewModel.swift */,
 			);
 			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		28BFC39B299972E300E590F0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				28BFC39C299972F700E590F0 /* ErrorView.swift */,
+				28BFC39E2999731200E590F0 /* ErrorViewDelegate.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		28BFC3A22999856900E590F0 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				28BFC3A32999859400E590F0 /* ChargingStation+Stub.swift */,
+				28BFC3A52999862E00E590F0 /* ChargingStationsViewModel+Stub.swift */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,19 +379,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BFC39F2999731200E590F0 /* ErrorViewDelegate.swift in Sources */,
+				28BFC3A42999859400E590F0 /* ChargingStation+Stub.swift in Sources */,
 				28BFC38529996F9200E590F0 /* ChargingStationsFactory.swift in Sources */,
 				28BFC38029994A2400E590F0 /* NetworkErrorHandler.swift in Sources */,
+				28BFC3A12999755C00E590F0 /* ChargingStationsMapView.swift in Sources */,
 				28BFC3942999705A00E590F0 /* ChargingStationsViewModel.swift in Sources */,
 				28BFC38A29996FB900E590F0 /* ChargingStation.swift in Sources */,
+				28BFC3A62999862E00E590F0 /* ChargingStationsViewModel+Stub.swift in Sources */,
+				28BFC39D299972F700E590F0 /* ErrorView.swift in Sources */,
+				28BFC3962999719C00E590F0 /* ChargingStationsView.swift in Sources */,
 				28BFC38229994A3B00E590F0 /* NetworkError.swift in Sources */,
 				28BFC38E2999700C00E590F0 /* FeatureState.swift in Sources */,
 				28BFC3922999704100E590F0 /* ChargingStationsFetching.swift in Sources */,
 				28BFC37C299949A300E590F0 /* RequestFactory.swift in Sources */,
 				28BFC3452999425E00E590F0 /* AppDelegate.swift in Sources */,
+				28BFC3982999721800E590F0 /* MapZoomButtons.swift in Sources */,
 				28BFC37A2999496E00E590F0 /* NetworkService.swift in Sources */,
 				28BFC3472999425E00E590F0 /* SceneDelegate.swift in Sources */,
 				28BFC37E29994A0900E590F0 /* NetworkRequest.swift in Sources */,
 				28BFC38C29996FD700E590F0 /* ChargingStationsRequest.swift in Sources */,
+				28BFC39A2999723700E590F0 /* MapAnnotationImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
