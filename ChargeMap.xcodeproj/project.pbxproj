@@ -16,6 +16,12 @@
 		28BFC37E29994A0900E590F0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC37D29994A0900E590F0 /* NetworkRequest.swift */; };
 		28BFC38029994A2400E590F0 /* NetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC37F29994A2400E590F0 /* NetworkErrorHandler.swift */; };
 		28BFC38229994A3B00E590F0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC38129994A3B00E590F0 /* NetworkError.swift */; };
+		28BFC38529996F9200E590F0 /* ChargingStationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC38429996F9200E590F0 /* ChargingStationsFactory.swift */; };
+		28BFC38A29996FB900E590F0 /* ChargingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC38929996FB900E590F0 /* ChargingStation.swift */; };
+		28BFC38C29996FD700E590F0 /* ChargingStationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC38B29996FD700E590F0 /* ChargingStationsRequest.swift */; };
+		28BFC38E2999700C00E590F0 /* FeatureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC38D2999700C00E590F0 /* FeatureState.swift */; };
+		28BFC3922999704100E590F0 /* ChargingStationsFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3912999704100E590F0 /* ChargingStationsFetching.swift */; };
+		28BFC3942999705A00E590F0 /* ChargingStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3932999705A00E590F0 /* ChargingStationsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		28BFC37D29994A0900E590F0 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		28BFC37F29994A2400E590F0 /* NetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandler.swift; sourceTree = "<group>"; };
 		28BFC38129994A3B00E590F0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		28BFC38429996F9200E590F0 /* ChargingStationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsFactory.swift; sourceTree = "<group>"; };
+		28BFC38929996FB900E590F0 /* ChargingStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStation.swift; sourceTree = "<group>"; };
+		28BFC38B29996FD700E590F0 /* ChargingStationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsRequest.swift; sourceTree = "<group>"; };
+		28BFC38D2999700C00E590F0 /* FeatureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureState.swift; sourceTree = "<group>"; };
+		28BFC3912999704100E590F0 /* ChargingStationsFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsFetching.swift; sourceTree = "<group>"; };
+		28BFC3932999705A00E590F0 /* ChargingStationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,7 @@
 		28BFC374299942FB00E590F0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				28BFC38329996F7900E590F0 /* ChargingStations */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -123,6 +136,7 @@
 		28BFC3752999430700E590F0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				28BFC38D2999700C00E590F0 /* FeatureState.swift */,
 				28BFC3782999495100E590F0 /* NetworkService */,
 			);
 			path = Core;
@@ -157,6 +171,42 @@
 				28BFC38129994A3B00E590F0 /* NetworkError.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		28BFC38329996F7900E590F0 /* ChargingStations */ = {
+			isa = PBXGroup;
+			children = (
+				28BFC38629996F9700E590F0 /* Model */,
+				28BFC38729996F9C00E590F0 /* View */,
+				28BFC38829996FA100E590F0 /* VIewModel */,
+				28BFC38429996F9200E590F0 /* ChargingStationsFactory.swift */,
+			);
+			path = ChargingStations;
+			sourceTree = "<group>";
+		};
+		28BFC38629996F9700E590F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28BFC38929996FB900E590F0 /* ChargingStation.swift */,
+				28BFC38B29996FD700E590F0 /* ChargingStationsRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28BFC38729996F9C00E590F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28BFC38829996FA100E590F0 /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28BFC3912999704100E590F0 /* ChargingStationsFetching.swift */,
+				28BFC3932999705A00E590F0 /* ChargingStationsViewModel.swift */,
+			);
+			path = VIewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,13 +339,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BFC38529996F9200E590F0 /* ChargingStationsFactory.swift in Sources */,
 				28BFC38029994A2400E590F0 /* NetworkErrorHandler.swift in Sources */,
+				28BFC3942999705A00E590F0 /* ChargingStationsViewModel.swift in Sources */,
+				28BFC38A29996FB900E590F0 /* ChargingStation.swift in Sources */,
 				28BFC38229994A3B00E590F0 /* NetworkError.swift in Sources */,
+				28BFC38E2999700C00E590F0 /* FeatureState.swift in Sources */,
+				28BFC3922999704100E590F0 /* ChargingStationsFetching.swift in Sources */,
 				28BFC37C299949A300E590F0 /* RequestFactory.swift in Sources */,
 				28BFC3452999425E00E590F0 /* AppDelegate.swift in Sources */,
 				28BFC37A2999496E00E590F0 /* NetworkService.swift in Sources */,
 				28BFC3472999425E00E590F0 /* SceneDelegate.swift in Sources */,
 				28BFC37E29994A0900E590F0 /* NetworkRequest.swift in Sources */,
+				28BFC38C29996FD700E590F0 /* ChargingStationsRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
