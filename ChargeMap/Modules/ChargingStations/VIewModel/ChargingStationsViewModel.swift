@@ -55,7 +55,6 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
         state = .loading
         do {
             let chargingStations = try await networkService.fetchChargingStations()
-            print(chargingStations.count)
             state = .success(result: chargingStations)
         } catch {
             state = .error(error: .serverError)

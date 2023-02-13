@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChargingStation: Codable, Identifiable {
+struct ChargingStation: Codable, Identifiable, Equatable {
     let id: Int
     let uuid: UUID
     let addressInfo: AddressInfo
@@ -23,7 +23,7 @@ struct ChargingStation: Codable, Identifiable {
     }
 }
 
-struct AddressInfo: Codable {
+struct AddressInfo: Codable, Equatable {
     let id: Int
     let title: String
     let address: String
