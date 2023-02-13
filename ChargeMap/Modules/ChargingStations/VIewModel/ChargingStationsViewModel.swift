@@ -14,9 +14,12 @@ protocol ChargingStationsViewModelProtocol: ObservableObject {
     
     var chargingStations: [ChargingStation] { get }
     var coordinateRegion: MKCoordinateRegion { get set }
+    var selectedChargingStation: ChargingStation? { get set }
+    var showingStationDetails: Bool { get set }
     
     /// Send network request
     func getChargingStations() async
+    func chargingStationWasSelected(id: Int)
 }
 
 @MainActor
@@ -29,6 +32,8 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
         center: CLLocationCoordinate2D(latitude: 52.526, longitude: 13.415),
         span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
     )
+    @Published var selectedChargingStation: ChargingStation?
+    @Published var showingStationDetails = false
     
     var chargingStations: [ChargingStation] {
         switch state {
@@ -59,6 +64,12 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
         } catch {
             state = .error(error: .serverError)
         }
+    }
+    
+    func chargingStationWasSelected(id: Int) {
+        guard let chargingStation = chargingStations.first(where: { $0.id == id }) else { return }
+        selectedChargingStation = chargingStation
+        showingStationDetails = true
     }
 }
 
