@@ -16,8 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .gray
+        let viewController = ChargingStationsFactory.create()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
