@@ -44,6 +44,8 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
         }
     }
     
+    private var refreshTimer: Timer?
+    
     // MARK: - Private properties
     
     private let networkService: ChargingStationsFetching
@@ -54,6 +56,10 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
         self.networkService = networkService
     }
     
+    deinit {
+        refreshTimer?.invalidate()
+    }
+    
     // MARK: - Functions
     
     func getChargingStations() async {
@@ -61,6 +67,7 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
         do {
             let chargingStations = try await networkService.fetchChargingStations()
             state = .success(result: chargingStations)
+            setRefreshTimer()
         } catch {
             state = .error(error: .serverError)
         }
@@ -70,6 +77,20 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
         guard let chargingStation = chargingStations.first(where: { $0.id == id }) else { return }
         selectedChargingStation = chargingStation
         showingStationDetails = true
+    }
+    
+    private func setRefreshTimer() {
+        refreshTimer = Timer.scheduledTimer(
+            timeInterval: 30,
+            target: self,
+            selector: #selector(updateChargingStations),
+            userInfo: nil,
+            repeats: false
+        )
+    }
+    
+    @objc private func updateChargingStations() {
+        Task { await getChargingStations() }
     }
 }
 
