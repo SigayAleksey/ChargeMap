@@ -36,7 +36,7 @@ struct ChargingStationsView<ViewModel: ChargingStationsViewModelProtocol & MapZo
                     delegate: viewModel
                 )
             }
-        }.task { await viewModel.getChargingStations() }
+        }.task { await viewModel.getChargingStations(isTimerUpdate: false) }
     }
 }
 

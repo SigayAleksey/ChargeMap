@@ -18,7 +18,7 @@ protocol ChargingStationsViewModelProtocol: ObservableObject {
     var showingStationDetails: Bool { get set }
     
     /// Send network request
-    func getChargingStations() async
+    func getChargingStations(isTimerUpdate: Bool) async
     func chargingStationWasSelected(id: Int)
 }
 
@@ -62,8 +62,11 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
     
     // MARK: - Functions
     
-    func getChargingStations() async {
-        state = .loading
+    func getChargingStations(isTimerUpdate: Bool) async {
+        if !isTimerUpdate {
+            state = .loading
+        }
+        
         do {
             let chargingStations = try await networkService.fetchChargingStations()
             state = .success(result: chargingStations)
@@ -90,7 +93,7 @@ final class ChargingStationsViewModel: ChargingStationsViewModelProtocol {
     }
     
     @objc private func updateChargingStations() {
-        Task { await getChargingStations() }
+        Task { await getChargingStations(isTimerUpdate: true) }
     }
 }
 
@@ -102,7 +105,7 @@ extension ChargingStationsViewModel: ErrorViewDelegate {
     }
     
     func repeatAction() {
-        Task { await getChargingStations() }
+        Task { await getChargingStations(isTimerUpdate: false) }
     }
 }
 
