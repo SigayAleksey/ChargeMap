@@ -38,6 +38,8 @@ final class ChargingStationsViewModelTests: XCTestCase {
                 span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
             )
         )
+        XCTAssertEqual(viewModel.selectedChargingStation, nil)
+        XCTAssertEqual(viewModel.showingStationDetails, false)
         XCTAssertTrue(viewModel.chargingStations.isEmpty)
         XCTAssertTrue(viewModel["networkService"] is ChargingStationsFetching)
     }
@@ -93,6 +95,36 @@ final class ChargingStationsViewModelTests: XCTestCase {
         XCTAssertEqual(networkService.fetchChargingStationsNumberOfCalls, 1)
         XCTAssertEqual(viewModel.state, .error(error: NetworkError.serverError))
         XCTAssertTrue(viewModel.chargingStations.isEmpty)
+    }
+    
+    // MARK: - chargingStationWasSelected
+    
+    @MainActor
+    func testSetSelectedStation() async throws {
+        // given
+        networkService.returnValue = ChargingStation.Stub.stations
+        await viewModel.getChargingStations()
+        let stationID = 1
+        // when
+        viewModel.chargingStationWasSelected(id: stationID)
+        try await Task.sleep(nanoseconds: 1_000)
+        // then
+        XCTAssertEqual(viewModel.selectedChargingStation, ChargingStation.Stub.station1)
+        XCTAssertEqual(viewModel.showingStationDetails, true)
+    }
+    
+    @MainActor
+    func testStationWithNonexistentNumberWasSelected() async throws {
+        // given
+        networkService.returnValue = ChargingStation.Stub.stations
+        await viewModel.getChargingStations()
+        let stationID = 4
+        // when
+        viewModel.chargingStationWasSelected(id: stationID)
+        try await Task.sleep(nanoseconds: 1_000)
+        // then
+        XCTAssertEqual(viewModel.selectedChargingStation, nil)
+        XCTAssertEqual(viewModel.showingStationDetails, false)
     }
 
     // MARK: - ErrorViewDelegate
