@@ -25,7 +25,7 @@ struct ChargingStationDetailsView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("📍\(chargingStation.addressInfo.address)")
-                        Text("🔋Number of charging points: \(chargingStation.numberOfPoints)")
+                        Text("🔋Number of charging points: \(chargingStation.connections.count)")
                     }
                     Spacer()
                 }
