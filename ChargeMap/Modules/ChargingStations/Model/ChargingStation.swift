@@ -11,14 +11,14 @@ struct ChargingStation: Codable, Identifiable, Equatable {
     let id: Int
     let uuid: UUID
     let addressInfo: AddressInfo
-    let numberOfPoints: Int
+    let connections: [Connection]
     let dateLastStatusUpdate: String
     
     enum CodingKeys: String, CodingKey {
         case id = "ID"
         case uuid = "UUID"
         case addressInfo = "AddressInfo"
-        case numberOfPoints = "NumberOfPoints"
+        case connections = "Connections"
         case dateLastStatusUpdate = "DateLastStatusUpdate"
     }
 }
@@ -36,5 +36,13 @@ struct AddressInfo: Codable, Equatable {
         case address = "AddressLine1"
         case latitude = "Latitude"
         case longitude = "Longitude"
+    }
+}
+
+struct Connection: Codable, Equatable {
+    let id: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "ID"
     }
 }
