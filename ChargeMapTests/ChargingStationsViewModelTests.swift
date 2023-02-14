@@ -55,7 +55,7 @@ final class ChargingStationsViewModelTests: XCTestCase {
         let chargingStations = ChargingStation.Stub.stations
         // when
         networkService.returnValue = chargingStations
-        await viewModel.getChargingStations()
+        await viewModel.getChargingStations(isTimerUpdate: false)
         // then
         XCTAssertTrue(networkService.fetchChargingStationsWasCalled)
         XCTAssertEqual(networkService.fetchChargingStationsNumberOfCalls, 1)
@@ -72,7 +72,7 @@ final class ChargingStationsViewModelTests: XCTestCase {
         let chargingStations: [ChargingStation] = []
         // when
         networkService.returnValue = chargingStations
-        await viewModel.getChargingStations()
+        await viewModel.getChargingStations(isTimerUpdate: false)
         // then
         XCTAssertTrue(networkService.fetchChargingStationsWasCalled)
         XCTAssertEqual(networkService.fetchChargingStationsNumberOfCalls, 1)
@@ -89,7 +89,7 @@ final class ChargingStationsViewModelTests: XCTestCase {
         let chargingStations: [ChargingStation]? = nil
         // when
         networkService.returnValue = chargingStations
-        await viewModel.getChargingStations()
+        await viewModel.getChargingStations(isTimerUpdate: false)
         // then
         XCTAssertTrue(networkService.fetchChargingStationsWasCalled)
         XCTAssertEqual(networkService.fetchChargingStationsNumberOfCalls, 1)
@@ -103,7 +103,7 @@ final class ChargingStationsViewModelTests: XCTestCase {
     func testSetSelectedStation() async throws {
         // given
         networkService.returnValue = ChargingStation.Stub.stations
-        await viewModel.getChargingStations()
+        await viewModel.getChargingStations(isTimerUpdate: false)
         let stationID = 1
         // when
         viewModel.chargingStationWasSelected(id: stationID)
@@ -117,7 +117,7 @@ final class ChargingStationsViewModelTests: XCTestCase {
     func testStationWithNonexistentNumberWasSelected() async throws {
         // given
         networkService.returnValue = ChargingStation.Stub.stations
-        await viewModel.getChargingStations()
+        await viewModel.getChargingStations(isTimerUpdate: false)
         let stationID = 4
         // when
         viewModel.chargingStationWasSelected(id: stationID)
@@ -134,7 +134,7 @@ final class ChargingStationsViewModelTests: XCTestCase {
         // given
         let chargingStations: [ChargingStation]? = nil
         networkService.returnValue = chargingStations
-        await viewModel.getChargingStations()
+        await viewModel.getChargingStations(isTimerUpdate: false)
         XCTAssertTrue(networkService.fetchChargingStationsWasCalled)
         XCTAssertEqual(networkService.fetchChargingStationsNumberOfCalls, 1)
         XCTAssertEqual(viewModel.state, .error(error: NetworkError.serverError))
@@ -151,7 +151,7 @@ final class ChargingStationsViewModelTests: XCTestCase {
         // given
         let chargingStations: [ChargingStation]? = nil
         networkService.returnValue = chargingStations
-        await viewModel.getChargingStations()
+        await viewModel.getChargingStations(isTimerUpdate: false)
         XCTAssertTrue(networkService.fetchChargingStationsWasCalled)
         XCTAssertEqual(networkService.fetchChargingStationsNumberOfCalls, 1)
         XCTAssertEqual(viewModel.state, .error(error: NetworkError.serverError))

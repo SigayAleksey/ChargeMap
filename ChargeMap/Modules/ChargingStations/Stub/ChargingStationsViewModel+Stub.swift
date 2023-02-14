@@ -23,7 +23,7 @@ extension ChargingStationsViewModel {
 
             var chargingStations: [ChargingStation] = []
 
-            func getChargingStations() async { }
+            func getChargingStations(isTimerUpdate: Bool) async { }
             func chargingStationWasSelected(id: Int) { }
             
             var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
@@ -43,7 +43,7 @@ extension ChargingStationsViewModel {
             
             var chargingStations: [ChargingStation] = []
 
-            func getChargingStations() async { }
+            func getChargingStations(isTimerUpdate: Bool) async { }
             func chargingStationWasSelected(id: Int) { }
             
             var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
@@ -63,7 +63,7 @@ extension ChargingStationsViewModel {
             
             var chargingStations: [ChargingStation] = ChargingStation.Stub.stations
 
-            func getChargingStations() async { }
+            func getChargingStations(isTimerUpdate: Bool) async { }
             func chargingStationWasSelected(id: Int) { }
             
             var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
@@ -83,7 +83,7 @@ extension ChargingStationsViewModel {
             
             var chargingStations: [ChargingStation] = ChargingStation.Stub.stations
 
-            func getChargingStations() async { }
+            func getChargingStations(isTimerUpdate: Bool) async { }
             func chargingStationWasSelected(id: Int) { }
             
             var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
