@@ -19,7 +19,7 @@ extension ChargingStation {
                 latitude: 52.526,
                 longitude: 13.415
             ),
-            numberOfPoints: 3,
+            connections: [Connection(id: 1)],
             dateLastStatusUpdate: "2023-02-11T08:42:00Z"
         )
         static let station2 = ChargingStation(
@@ -32,7 +32,7 @@ extension ChargingStation {
                 latitude: 52,
                 longitude: 13
             ),
-            numberOfPoints: 3,
+            connections: [Connection(id: 1), Connection(id: 2)],
             dateLastStatusUpdate: "2023-02-11T08:42:00Z"
         )
         static let station3 = ChargingStation(
@@ -45,7 +45,7 @@ extension ChargingStation {
                 latitude: 53,
                 longitude: 14
             ),
-            numberOfPoints: 3,
+            connections: [Connection(id: 1), Connection(id: 2), Connection(id: 3)],
             dateLastStatusUpdate: "2023-02-11T08:42:00Z"
         )
         
