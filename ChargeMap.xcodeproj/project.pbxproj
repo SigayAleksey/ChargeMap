@@ -10,6 +10,7 @@
 		280689AE2999A650000B85AB /* ChargingStationsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280689AD2999A650000B85AB /* ChargingStationsViewModelTests.swift */; };
 		280692412999B694000B85AB /* PropertyReflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280692402999B694000B85AB /* PropertyReflectable.swift */; };
 		28069AD4299A9B9F000B85AB /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28069AD3299A9B9F000B85AB /* NetworkServiceMock.swift */; };
+		28069AD9299AAC71000B85AB /* ChargingStationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28069AD8299AAC71000B85AB /* ChargingStationDetailsView.swift */; };
 		28BFC3452999425E00E590F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3442999425E00E590F0 /* AppDelegate.swift */; };
 		28BFC3472999425E00E590F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BFC3462999425E00E590F0 /* SceneDelegate.swift */; };
 		28BFC34E2999426000E590F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BFC34D2999426000E590F0 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		280689AD2999A650000B85AB /* ChargingStationsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationsViewModelTests.swift; sourceTree = "<group>"; };
 		280692402999B694000B85AB /* PropertyReflectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyReflectable.swift; sourceTree = "<group>"; };
 		28069AD3299A9B9F000B85AB /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		28069AD8299AAC71000B85AB /* ChargingStationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationDetailsView.swift; sourceTree = "<group>"; };
 		28BFC3412999425E00E590F0 /* ChargeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BFC3442999425E00E590F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28BFC3462999425E00E590F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				28BFC3A02999755C00E590F0 /* ChargingStationsMapView.swift */,
 				28BFC3972999721800E590F0 /* MapZoomButtons.swift */,
 				28BFC3992999723700E590F0 /* MapAnnotationImage.swift */,
+				28069AD8299AAC71000B85AB /* ChargingStationDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				28BFC38029994A2400E590F0 /* NetworkErrorHandler.swift in Sources */,
 				28BFC3A12999755C00E590F0 /* ChargingStationsMapView.swift in Sources */,
 				28BFC3942999705A00E590F0 /* ChargingStationsViewModel.swift in Sources */,
+				28069AD9299AAC71000B85AB /* ChargingStationDetailsView.swift in Sources */,
 				28BFC38A29996FB900E590F0 /* ChargingStation.swift in Sources */,
 				28BFC3A62999862E00E590F0 /* ChargingStationsViewModel+Stub.swift in Sources */,
 				28BFC39D299972F700E590F0 /* ErrorView.swift in Sources */,

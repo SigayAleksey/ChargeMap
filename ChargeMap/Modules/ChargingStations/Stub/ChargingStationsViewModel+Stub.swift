@@ -18,10 +18,13 @@ extension ChargingStationsViewModel {
             @Published private(set) var state: FeatureState<[ChargingStation]> =
                 .error(error: NetworkError.serverError)
             @Published var coordinateRegion = Stub.coordinateRegion
+            @Published var selectedChargingStation: ChargingStation? = nil
+            @Published var showingStationDetails = false
 
             var chargingStations: [ChargingStation] = []
 
             func getChargingStations() async { }
+            func chargingStationWasSelected(id: Int) { }
             
             var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
             func cancelAction() { }
@@ -35,10 +38,13 @@ extension ChargingStationsViewModel {
             @Published private(set) var state: FeatureState<[ChargingStation]> =
                 .success(result: [])
             @Published var coordinateRegion = Stub.coordinateRegion
-
+            @Published var selectedChargingStation: ChargingStation? = nil
+            @Published var showingStationDetails = false
+            
             var chargingStations: [ChargingStation] = []
 
             func getChargingStations() async { }
+            func chargingStationWasSelected(id: Int) { }
             
             var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
             func cancelAction() { }
@@ -52,10 +58,33 @@ extension ChargingStationsViewModel {
             @Published private(set) var state: FeatureState<[ChargingStation]> =
                 .success(result: ChargingStation.Stub.stations)
             @Published var coordinateRegion = Stub.coordinateRegion
-
+            @Published var selectedChargingStation: ChargingStation? = nil
+            @Published var showingStationDetails = false
+            
             var chargingStations: [ChargingStation] = ChargingStation.Stub.stations
 
             func getChargingStations() async { }
+            func chargingStationWasSelected(id: Int) { }
+            
+            var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
+            func cancelAction() { }
+            func repeatAction() { }
+            
+            func zoom() { }
+            func out() { }
+        }
+        
+        class WithStationDetails: ChargingStationsViewModelProtocol, MapZoomButtonsProtocol, ErrorViewDelegate {
+            @Published private(set) var state: FeatureState<[ChargingStation]> =
+                .success(result: ChargingStation.Stub.stations)
+            @Published var coordinateRegion = Stub.coordinateRegion
+            @Published var selectedChargingStation: ChargingStation? = ChargingStation.Stub.station1
+            @Published var showingStationDetails = true
+            
+            var chargingStations: [ChargingStation] = ChargingStation.Stub.stations
+
+            func getChargingStations() async { }
+            func chargingStationWasSelected(id: Int) { }
             
             var repeatableOptions: ErrorViewRepeatableOptions { .repeatable }
             func cancelAction() { }

@@ -31,7 +31,9 @@ struct ChargingStationsMapView<ViewModel: ChargingStationsViewModelProtocol & Ma
                 ) {
                     MapAnnotationImage()
                         .onTapGesture {
-
+                            viewModel.chargingStationWasSelected(
+                                id: chargingStation.id
+                            )
                         }
                 }
             }
@@ -40,12 +42,27 @@ struct ChargingStationsMapView<ViewModel: ChargingStationsViewModelProtocol & Ma
             
             MapZoomButtons(viewModel: viewModel)
         }
+        .sheet(isPresented: $viewModel.showingStationDetails) {
+            if let chargingStation = viewModel.selectedChargingStation {
+                ChargingStationDetailsView(chargingStation: chargingStation)
+                    .presentationDetents([.height(150)])
+                .presentationDragIndicator(.visible)
+            }
+        }
     }
 }
 
 struct ChargingStationsMapView_Previews: PreviewProvider {
     static var previews: some View {
-        ChargingStationsMapView(viewModel: ChargingStationsViewModel.Stub.Full())
+        ChargingStationsMapView(
+            viewModel: ChargingStationsViewModel.Stub.Full()
+        )
+        .previewDisplayName("Full")
+        
+        ChargingStationsMapView(
+            viewModel: ChargingStationsViewModel.Stub.WithStationDetails()
+        )
+        .previewDisplayName("WithStationDetails")
     }
 }
 
